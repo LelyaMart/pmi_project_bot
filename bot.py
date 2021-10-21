@@ -1,5 +1,8 @@
 import telebot
 from dclass import clas
+import requests
+from io import BytesIO
+from PIL import Image
 
 token = '2004464512:AAHKsEHWRIds5xJwjByM1mhQ1bawEEWKwhY'
 bot = telebot.TeleBot(token)
@@ -21,6 +24,8 @@ def getPhoto(message):
     path = file.file_path
     path = 'https://api.telegram.org/file/bot' + token + '/' + path
     x = clas(path)
-    bot.send_photo(message.from_user.id, x[1])
+    imag = requests.get(x[1]).content
+    imag = Image.open(BytesIO(imag))
+    bot.send_photo(message.from_user.id, imag, caption = x[2])
 
 bot.polling(none_stop=True, interval=0)
