@@ -23,9 +23,12 @@ def getPhoto(message):
     file = bot.get_file(fileID)
     path = file.file_path
     path = 'https://api.telegram.org/file/bot' + token + '/' + path
-    x = clas(path)
-    imag = requests.get(x[1]).content
-    imag = Image.open(BytesIO(imag))
-    bot.send_photo(message.from_user.id, imag, caption = x[2])
+    try:
+        x = clas(path)
+        imag = requests.get(x[1]).content
+        imag = Image.open(BytesIO(imag))
+        bot.send_photo(message.from_user.id, imag, caption = x[2])
+    except:
+        bot.send_message(message.from_user.id, 'Ой, я не нашёл твоё лицо... Отправь другую фотографию"
 
 bot.polling(none_stop=True, interval=0)
