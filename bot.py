@@ -28,7 +28,7 @@ def getPhoto(message):
         imag = requests.get(x[1]).content
         imag = Image.open(BytesIO(imag))
         bot.send_photo(message.from_user.id, imag, caption = x[2])
-    Exception as e:
-        bot.send_message(message.from_user.id, e)
+    except Exception as e:
+        bot.send_message(message.from_user.id, str(e))
 
 bot.polling(none_stop=True, interval=0)
