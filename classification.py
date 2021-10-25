@@ -31,8 +31,6 @@ def face_Descriptor(img):
     facerec = dlib.face_recognition_model_v1('dlib_face_recognition_resnet_model_v1.dat')
     detector = dlib.get_frontal_face_detector()
     
-    win1 = dlib.image()
-    win1.clear_overlay()
     win1.set_image(img)
 
     dets = detector(img, 1)
