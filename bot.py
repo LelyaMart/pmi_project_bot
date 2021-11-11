@@ -12,7 +12,7 @@ APP_NAME = 'Pmi_project'
 def start_message(message):
     bot.send_message(message.chat.id, 'Привет! Отправь мне фотографию, и я скажу на какого преподавателя МИФИ ты похож.')
 
-@bot.message_handler(content_types=['text'])
+@bot.message_handler(content_types=['text', 'entities', 'audio', 'document', 'sticker', 'video', 'voice', 'caption', 'contact', 'location', 'venue'])
 def get_text_messages(message):
     bot.send_message(message.from_user.id, "Прости, я тебя не понимаю( Отправь мне фотографию")
 
