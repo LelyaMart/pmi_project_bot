@@ -39,7 +39,7 @@ def face_Descriptor(img):
     return face_descriptor1
 
 def print_src(id):
-    sqlite_connection = sqlite3.connect('teachers2.db')
+    sqlite_connection = sqlite3.connect('teachers4.db')
     cursor = sqlite_connection.cursor()
     sql_select_query = "select * from teachers"
     cursor.execute(sql_select_query)
@@ -48,4 +48,5 @@ def print_src(id):
 
     cursor.close()
     sqlite_connection.close()
+
 
