@@ -31,4 +31,9 @@ def getPhoto(message):
     except:
         bot.send_message(message.from_user.id, "Ой, я не нашёл твоё лицо( Отправь другую фотографию")
 
-bot.polling(none_stop=True, interval=0)
+if __name__ == '__main__':
+    while True:
+        try:
+            bot.polling(none_stop=True)
+        except Exception as e:
+            time.sleep(1)
