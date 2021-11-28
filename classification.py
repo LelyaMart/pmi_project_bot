@@ -11,7 +11,7 @@ from io import BytesIO
 def read_sqlite_table():
     try:
         f = []
-        sqlite_connection = sqlite3.connect('teachers2.db')
+        sqlite_connection = sqlite3.connect('teachers4.db')
         cursor = sqlite_connection.cursor()
         sqlite_select_query = """SELECT * from teachers"""
         cursor.execute(sqlite_select_query)
