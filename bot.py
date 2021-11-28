@@ -27,7 +27,7 @@ def getPhoto(message):
         x = clas(path)
         imag = requests.get(x[1]).content
         imag = Image.open(BytesIO(imag))
-        bot.send_photo(message.from_user.id, imag, caption = x[2])
+        bot.send_photo(message.from_user.id, imag, caption = "Преподаватель, который больше всего похож на человека с фото: " + x[2] + "\n" + x[4])
     except:
         bot.send_message(message.from_user.id, "Ой, я не нашёл твоё лицо( Отправь другую фотографию")
 
