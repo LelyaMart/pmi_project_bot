@@ -1,11 +1,10 @@
 import telebot
-import time
 from dclass import clas
 import requests
 from io import BytesIO
 from PIL import Image
 
-token = 'TOKEN'
+token = '2004464512:AAHKsEHWRIds5xJwjByM1mhQ1bawEEWKwhY'
 bot = telebot.TeleBot(token)
 APP_NAME = 'Pmi_project'
 
@@ -32,9 +31,11 @@ def getPhoto(message):
     except:
         bot.send_message(message.from_user.id, "Ой, я не наёл твоё лицо( Отправь мне другую фотографию")
 
+def main():
+    try:
+        bot.polling(none_stop=True)
+    except Exception as e:
+        main()
+
 if __name__ == '__main__':
-    while True:
-        try:
-            bot.polling(none_stop=True)
-        except Exception as e:
-            time.sleep(1)
+    main()
