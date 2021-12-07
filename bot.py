@@ -5,7 +5,7 @@ import requests
 from io import BytesIO
 from PIL import Image
 
-token = '2004464512:AAHKsEHWRIds5xJwjByM1mhQ1bawEEWKwhY'
+token = 'TOKEN'
 bot = telebot.TeleBot(token)
 APP_NAME = 'Pmi_project'
 
