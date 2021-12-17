@@ -4,7 +4,7 @@ import requests
 from io import BytesIO
 from PIL import Image
 
-token = '2004464512:AAHKsEHWRIds5xJwjByM1mhQ1bawEEWKwhY'
+token = 'TOKEN'
 bot = telebot.TeleBot(token)
 APP_NAME = 'Pmi_project'
 
@@ -29,7 +29,7 @@ def getPhoto(message):
         imag = Image.open(BytesIO(imag))
         bot.send_photo(message.from_user.id, imag, caption = "Преподаватель, который больше всего похож на человека с фото: " + x[2] + "\n" + x[4])
     except:
-        bot.send_message(message.from_user.id, "Ой, я не наёл твоё лицо( Отправь мне другую фотографию")
+        bot.send_message(message.from_user.id, "Ой, я не нашёл твоё лицо( Отправь мне другую фотографию")
 
 def main():
     try:
